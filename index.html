@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>My Blog | Blog</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script>Page = "Main"</script>
+  <script src="JS/Model.js" defer></script>
+  <script src="JS/View.js" defer></script> 
+  <script src="JS/Controller.js" defer></script> 
+  <style>
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+    .row.content {height: 1500px}
+    
+     /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height: auto;} 
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">My Blog</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li id="home-button" class="active"><a href="">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li id="new-post-button"><a href="new.html">+ NEW POST</button></a></li>
+      </ul>
+      <ul id="lin" class="nav navbar-nav navbar-right">
+        <li id="login-button"><a href="log_in.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+      <ul id="sup" class="nav navbar-nav navbar-right">
+        <li id="sign-up-button"><a href="sign_up.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      </ul>
+      <ul id="prof" class="nav navbar-nav navbar-right">
+        <li id="profile-button"><a href="sign_up.html"><span class="glyphicon glyphicon-user"></span>Profile</a></li>
+      </ul>
+      <ul id="lout" class="nav navbar-nav navbar-right">
+        <li id="log-out-button"><a href="log_in.html"><span class="glyphicon glyphicon-log-in"></span> Log Out</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div id="post-core">
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidenav">
+      <h4>My Blog</h4>
+      <li id="post-selector-prototype" style="display: none;"><a>Post 1</a></li>
+      <ul id="post-selector" class="nav nav-pills nav-stacked">
+        <li class="active"><a>Post 1</a></li>
+        <li><a>Post 2</a></li>
+        <li><a>Post 3</a></li>
+        <li><a>Post 4</a></li>
+      </ul>
+    </div>
+
+    <div class="col-sm-9">
+      <h4><small>MY BLOG</small></h4>
+      <hr>
+
+
+
+<div id="add-new-post" style="display: none;">
+      <h2>Create New Post</h2>
+      <div class="form-group">
+        <label for="email">Title:</label>
+        <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-font"></i></span>
+          <input type="email" class="form-control" id="post-title">
+        </div>
+        <br>
+        <label for="email">Text:</label>
+      <form role="form">
+        <div class="form-group">
+          <textarea id="post-form" class="form-control" rows="3" required></textarea>
+        </div>
+        <button id="submit-post" class="btn btn-success">Submit Post</button>
+      </form>
+      <br><br>
+      </div>
+      </div>
+
+
+
+
+<div id="post-and-comments-body">
+      <h2 id="blog-heading">Example Heading</h2>
+      <h5 id="blog-date"><span class="glyphicon glyphicon-time"></span> Sep 27, 2020</h5>
+      <p id="blog-text">Coding is my passion. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <br><br>
+
+      <h4>Leave a Comment:</h4>
+      <form role="form">
+        <div class="form-group">
+          <textarea id="comment-form" class="form-control" rows="3" required></textarea>
+        </div>
+        <button id="submit-comment" class="btn btn-success">Submit</button>
+      </form>
+      <br><br>
+      
+      <p><span id="comment-count" class="badge">0</span> Comments:</p><br>
+
+
+
+
+      <div id="comment-photo-prototype" style="display: none;" class="col-sm-2 text-center">
+        <img src="Pictures/Logo.png" class="img-circle" height="65" width="65" alt="Avatar">
+      </div>
+      <div id="comment-prototype" style="display: none;"  class="col-sm-10">
+        <h4><p>Kolya Vasylenko</p> <small>Sep 29, 2015, 9:12 PM</small></h4>
+        <p id="comment-text"></p>
+        <hr>
+      </div>   
+      <div id="comment-container" class="row">
+          </div>
+          <br>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div> <!---Post Core-->
+
+<div id="profile-section">
+  <div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-1 col-md-2 col-lg-3">
+    </div>
+
+    <div class="col-sm-10 col-md-8 col-lg-6">
+    <br> <br>
+          <h4><small>MY PROFILE</small></h4>
+      <hr>
+       <img src="Pictures/Logo.png" class="img-circle" alt="Profile Photo"> 
+       <br><br><br>
+<div class="container">
+  <h2 id="p-name-h">Visiliy Petrentko</h2>
+  <div class="list-group">
+    <a href="#" class="list-group-item active">
+      <h4 class="list-group-item-heading">Name</h4>
+      <p class="list-group-item-text" id="p-name">Vasiliy Petrenko</p>
+    </a>
+    <a href="#" class="list-group-item">
+      <h4 class="list-group-item-heading">Date Of Birth</h4>
+      <p class="list-group-item-text" id="p-birth">2000/06/21</p>
+    </a>
+    <a href="#" class="list-group-item">
+      <h4 class="list-group-item-heading">Gender</h4>
+      <p class="list-group-item-text"  id="p-gender">Queer</p>
+    </a>
+    <a href="#" class="list-group-item">
+      <h4 class="list-group-item-heading">Joined</h4>
+      <p class="list-group-item-text"  id="p-joined">2020/05/05</p>
+    </a>
+    <a href="#" class="list-group-item">
+      <h4 class="list-group-item-heading">Comments</h4>
+      <p class="list-group-item-text"  id="p-comments">15</p>
+    </a>
+  </div>
+</div>
+        <div class="col-sm-1 col-md-2 col-lg-3">
+    </div>
+      
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div> <!---Profile Section-->
+
+
+<div id="login-section" style="display: none;">
+  <div class="container-fluid">
+    <div class="row content">
+      <div class="col-sm-1 col-md-2 col-lg-3">
+      </div>
+  
+      <div class="col-sm-10 col-md-8 col-lg-6">
+      <br> <br> <br> <br> <br> <br>
+            <h4><small>MY BLOG</small></h4>
+        <hr>
+       <form action="/action_page.php">
+    <div class="form-group">
+      <label for="email">Full Name:</label>
+      <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+        <input id="login-email" type="email" class="form-control" id="email">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+        <input id="login-password" type="password" class="form-control" id="pwd">
+      </div>
+    </div>
+    <div class="checkbox">
+      <label><input type="checkbox"> Remember me</label>
+    </div>
+    <button id="login-submit" type="submit" class="btn btn-primary">Log In</button>
+  </form> 
+          <div class="col-sm-1 col-md-2 col-lg-3">
+      </div>
+        
+    
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div><!---LoginSection-->
+
+
+<div id="sign-up-section" style="display: none;">
+  <div class="container-fluid">
+    <div class="row content">
+      <div class="col-sm-1 col-md-2 col-lg-3">
+      </div>
+  
+      <div class="col-sm-10 col-md-8 col-lg-6">
+      <br> <br> <br> <br> <br> <br>
+            <h4><small>MY BLOG</small></h4>
+        <hr>
+       <form action="/action_page.php">
+    <div class="form-group">
+      <label for="email">Full Name:</label>
+      <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+        <input id="sign-up-email" type="email" class="form-control" id="email">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+        <input id="sign-up-password" type="password" class="form-control" id="pwd">
+      </div>
+    </div>
+      <div class="form-group">
+      <label for="email">Gender:</label>
+     <div class="input-group">
+      <span class="input-group-addon">Gender</span>
+      <input id="sign-up-gender" id="msg" type="text" class="form-control" name="msg" placeholder="Male, Female, Non-Binary, Other...">
+      </div>
+    </div>
+      <div class="form-group">
+      <label for="email">Date Of Birth:</label>
+      <div class="input-group">
+      <span class="input-group-addon">Birth Date</span>
+      <input id="sign-up-birth" id="msg" type="text" class="form-control" name="msg" placeholder="YYYY/MM/DD">
+    </div>
+    </div>
+    <button id="sign-up-submit" type="submit" class="btn btn-primary">Sign Up</button>
+  </form> 
+          <div class="col-sm-1 col-md-2 col-lg-3">
+      </div>
+        
+    
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div> <!---Sign Up Section-->
+
+<footer class="container-fluid">
+  <p>My Blog ©. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
+
