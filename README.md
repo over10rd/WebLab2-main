@@ -11,4 +11,4 @@
 Інструменти розробки: мови HTML5, CSS3, Javascript.
 Зауваження: Web-фреймворки (ReactJS, AngularJS, VueJS) не використовувати!
 
-https://docs.google.com/document/d/1d6Yc0iX_jUxOFgrSFlgR1DAj7YSttWMmYbxfnP9pe30/edit?usp=sharing
+https://docs.google.com/document/d/1VAYHo7U2FA-MieLmEtv07JeLkxIR9t3J6uU2PePNPh4/edit?usp=sharing
